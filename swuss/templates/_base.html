@@ -1,0 +1,55 @@
+<html>
+<head>
+    {% block head %}
+        <title>Swuss Army Knife</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="static/bootstrap-4.1.1-dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="static/css/app.css">
+        {% endblock %}
+        {% block scripts %}
+            <script src="static/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+            <script src="static/popper-1.14.3/popper.min.js"></script>
+            <script src="static/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        {% block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Swuss</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tools
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% block pages %}
+                            {% for page, url in pages.items() %}
+                            <a class="dropdown-item" href="{{ url }}">{{ page }}</a>
+                            {% endfor %}
+                            {% endblock %}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+        {% block footer_scripts %}
+        {% endblock footer_scripts %}
+    {% endblock  %}
+</body>
+</html>

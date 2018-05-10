@@ -1,0 +1,11 @@
+
+#plantuml-input, #plantuml-output, #plantuml-submit {
+    width: 100%;
+}
+#plantuml-input, #plantuml-output {
+    height: 500px;
+}
+
+#plantuml-submit {
+    margin-top: 20px;
+}
